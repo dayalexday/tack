@@ -1,6 +1,7 @@
 # Tack
 
-Add pictures or folders, pick a few, make a board, customize it.
+Tack is a small browser app for making image boards. Add pictures or whole folders, browse them in a grid, then pick 2–6 and build a board. Choose a layout, shape, style and color treatment, drag and zoom each image into place, add a title and caption, and download the result as a PNG.
+
 
 **[Try it live → dayalexday.github.io/tack](https://dayalexday.github.io/tack)**
 
