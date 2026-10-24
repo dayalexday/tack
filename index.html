@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tack</title>
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<main>
+  <div id="prog"></div>
+  <header>
+    <span class="serif brand">TACK</span>
+    <input type="search" id="q" placeholder="Search…">
+    <div class="seg" id="type"><button class="on" data-t="all">All</button><button data-t="image">Images</button><button data-t="video">Videos</button></div>
+    <button id="favb" title="Favorites only">♥</button>
+    <button id="hue" title="Arrange as a color gradient">◐ Hue</button>
+    <button id="shuf">Shuffle</button>
+    <input type="range" id="den" min="140" max="440" value="230" title="Tile size" style="width:80px;accent-color:var(--gold)">
+    <button class="gold" id="cmpb" title="Pick 2–6 pieces and build a board">▣ Make a board</button>
+    <button id="pickf">+ Pictures</button>
+    <button id="pick">+ Folder</button>
+  </header>
+  <div id="wrap">
+    <div id="empty">
+      <h2 class="serif">Make a board.</h2>
+      <p>Add a set of pictures or whole folders. Pick a few, make a board, and tweak it until it&rsquo;s yours.</p>
+      <div style="display:flex;gap:10px"><button class="gold" id="pickf2">Add pictures</button><button id="pick2">Add folder</button></div>
+      <div class="muted" id="warn"></div>
+    </div>
+    <div id="grid"></div>
+  </div>
+</main>
+<div id="tray"><span id="tn"></span><button id="tclr">Clear</button><button class="gold" id="tgo" disabled>Build board</button></div>
+<div id="lb"><div id="lbx">×</div><div id="stage"></div>
+  <div id="side"><h1 class="serif" id="lbt" style="font-size:22px;word-break:break-word"></h1>
+    <div class="sw" id="lbp"></div><div class="muted" id="lbm"></div>
+    <div><button id="lbfav">♥ Favorite</button></div>
+    <div class="muted">← → navigate · F favorite · Esc close</div>
+  </div></div>
+<div id="cmp"><div id="cstage"><canvas id="cv"></canvas></div>
+  <div id="cside"><h1 class="serif" style="font-size:22px">Board</h1>
+    <input id="ct" placeholder="Title: what is this about?" maxlength="40">
+    <input id="cc" placeholder="Caption (optional)" maxlength="80">
+    <div class="muted">Layout</div><div class="seg" data-k="lay"><button class="on" data-v="grid">Grid</button><button data-v="hero">Hero</button><button data-v="strip">Strip</button><button data-v="stack">Stack</button><button data-v="scatter">Scatter</button></div>
+    <div class="muted">Shape</div><div class="seg" data-k="ar"><button class="on" data-v="4:5">4:5</button><button data-v="1:1">1:1</button><button data-v="9:16">9:16</button><button data-v="16:9">16:9</button></div>
+    <div class="muted">Style</div><div class="seg" data-k="style"><button class="on" data-v="glow">Glow</button><button data-v="noir">Noir</button><button data-v="paper">Paper</button><button data-v="film">Film</button></div>
+    <div class="muted">Treatment</div><div class="seg" data-k="tint"><button class="on" data-v="none">Color</button><button data-v="bw">B&amp;W</button><button data-v="duo">Duotone</button><button data-v="crush">Crush</button></div>
+    <div class="muted">Title type and placement</div><div class="seg" data-k="tfont"><button class="on" data-v="serif">Serif</button><button data-v="sans">Sans</button><button data-v="mono">Mono</button></div>
+    <div class="seg" data-k="tpos"><button class="on" data-v="bottom">Bottom</button><button data-v="top">Top</button><button data-v="over">Over</button><button data-v="side">Side</button></div>
+    <div class="muted">Glow</div><input type="range" id="cg" min="0" max="100" value="60">
+    <div class="muted">Space</div><input type="range" id="csp" min="0" max="100" value="40">
+    <div class="chk"><label><input type="checkbox" id="cn" checked> Grain</label><label><input type="checkbox" id="cs"> Soft corners</label><label><input type="checkbox" id="cp" checked> Palette</label><label><input type="checkbox" id="cat"> Accent title</label><label>Accent <input type="color" id="cac" value="#c9a45c"></label></div>
+    <div style="display:flex;gap:8px"><button id="csh">Reorder</button><button id="ccp">Copy</button><button class="gold" id="cdl">Download PNG</button></div>
+    <div class="muted">Drag a tile to reposition it · scroll over a tile to zoom</div>
+    <button id="cx">Back to pictures</button>
+  </div></div>
+<input type="file" id="fallback" webkitdirectory multiple hidden>
+<input type="file" id="filesin" accept="image/*,video/*" multiple hidden>
+<script src="js/core.js"></script>
+<script src="js/files.js"></script>
+<script src="js/media.js"></script>
+<script src="js/grid.js"></script>
+<script src="js/board.js"></script>
+<script src="js/lightbox.js"></script>
+</body></html>
